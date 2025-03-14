@@ -1,39 +1,29 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { Play } from 'lucide-react';
-
 const Hero = () => {
   const navigate = useNavigate();
-
-  return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-4 py-20 relative overflow-hidden">
+  return <section className="min-h-screen flex flex-col items-center justify-center px-4 py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-stealth-indigo/10 to-transparent z-0"></div>
       
       <div className="z-10 max-w-4xl mx-auto text-center animate-fade-in">
         <h1 className="font-poppins uppercase text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4">
-          <div className="mb-2">Smarter Care.</div>
-          <div className="mb-2">Instant Alerts.</div>
-          <div className="text-stealth-purple">Complete Peace of Mind.</div>
+          <div className="mb-2 py-[5px]">SMARTER CARE</div>
+          <div className="mb-2 py-[4px]">INSTANT ALERTS</div>
+          <div className="text-stealth-purple py-[5px]">Complete Peace of Mind.</div>
         </h1>
         
-        <h2 className="mb-10 text-xl md:text-2xl font-medium text-gray-300 font-inter max-w-2xl mx-auto">
+        <h2 className="mb-10 text-xl text-gray-300 font-inter max-w-2xl mx-auto font-thin md:text-lg">
           AI-powered wearable that keeps seniors safe, connected, and monitored—anytime, anywhere.
         </h2>
         
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
-          <Button 
-            className="btn-primary"
-            onClick={() => navigate('/early-access')}
-          >
+          <Button className="btn-primary" onClick={() => navigate('/early-access')}>
             Join Early Access
           </Button>
           
-          <Button 
-            variant="ghost" 
-            className="text-white hover:text-stealth-blue group flex items-center gap-2 transition-all"
-          >
+          <Button variant="ghost" className="text-white hover:text-stealth-blue group flex items-center gap-2 transition-all">
             <span className="hover-underline">Watch Demo Video</span>
             <Play className="w-4 h-4 transition-all group-hover:translate-x-1" />
           </Button>
@@ -49,8 +39,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
