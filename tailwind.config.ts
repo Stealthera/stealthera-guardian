@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -66,13 +67,14 @@ export default {
 					black: "#000000",
 					indigo: "#2C2A4A",
 					midnight: "#191970",
-					blue: "#007BFF",
-					purple: "#9b87f5",
+					blue: "#56CCF2",
+					purple: "#7A6DED",
 					lavender: "#E6E6FA"
 				}
 			},
 			fontFamily: {
 				inter: ['Inter', 'sans-serif'],
+				poppins: ['Poppins', 'sans-serif'],
 			},
 			keyframes: {
 				"accordion-down": {
@@ -112,6 +114,24 @@ export default {
 				"marquee": {
 					"0%": { transform: "translateX(0)" },
 					"100%": { transform: "translateX(-100%)" }
+				},
+				"pulse": {
+					"0%, 100%": { 
+						opacity: "1",
+						transform: "scale(1)" 
+					},
+					"50%": { 
+						opacity: "0.85",
+						transform: "scale(1.05)" 
+					}
+				},
+				"glow": {
+					"0%, 100%": {
+						boxShadow: "0 0 5px rgba(122, 109, 237, 0.5)"
+					},
+					"50%": {
+						boxShadow: "0 0 20px rgba(122, 109, 237, 0.8)"
+					}
 				}
 			},
 			animation: {
@@ -119,7 +139,9 @@ export default {
 				"accordion-up": "accordion-up 0.2s ease-out",
 				"fade-in": "fade-in 0.5s ease-out",
 				"slide-in": "slide-in 0.5s ease-out",
-				"marquee": "marquee 30s linear infinite"
+				"marquee": "marquee 30s linear infinite",
+				"pulse": "pulse 2s ease-in-out infinite",
+				"glow": "glow 2s ease-in-out infinite"
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

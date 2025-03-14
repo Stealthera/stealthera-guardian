@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -59,7 +60,7 @@
   }
 
   h1, h2, h3, h4 {
-    @apply font-inter tracking-tight;
+    @apply font-poppins tracking-tight uppercase;
   }
   
   h1 {
@@ -81,14 +82,15 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-stealth-blue text-white rounded-md px-6 py-3 font-semibold transition-all 
-           hover:bg-opacity-90 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-stealth-blue focus:ring-opacity-50;
+    @apply bg-stealth-purple text-white rounded-md px-6 py-3 font-semibold transition-all 
+           hover:bg-opacity-90 hover:scale-105 hover:shadow-[0_0_15px_rgba(86,204,242,0.5)] 
+           focus:outline-none focus:ring-2 focus:ring-stealth-blue focus:ring-opacity-50;
   }
   
   .btn-secondary {
     @apply bg-transparent border border-stealth-purple text-stealth-purple rounded-md px-6 py-3 font-semibold 
-           transition-all hover:bg-stealth-purple hover:bg-opacity-10 focus:outline-none focus:ring-2 
-           focus:ring-stealth-purple focus:ring-opacity-50;
+           transition-all hover:bg-stealth-purple hover:bg-opacity-10 hover:scale-105 
+           focus:outline-none focus:ring-2 focus:ring-stealth-purple focus:ring-opacity-50;
   }
   
   .fade-in-section {

@@ -11,7 +11,7 @@ const EarlyAccess = () => {
     <div className="min-h-screen bg-stealth-black flex flex-col">
       <header className="py-4 px-6 border-b border-stealth-indigo/30">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="text-white font-semibold text-xl">StealthEra</div>
+          <div className="text-white font-poppins font-bold text-xl uppercase">StealthEra</div>
           
           <button 
             onClick={() => navigate('/')}
@@ -26,8 +26,8 @@ const EarlyAccess = () => {
       <main className="flex-1 flex flex-col items-center justify-center py-16 px-4">
         <div className="max-w-2xl w-full">
           <div className="text-center mb-10">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-              Get <span className="text-stealth-blue">Early Access</span>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-white uppercase">
+              Get <span className="text-stealth-purple">Early Access</span>
             </h1>
             <p className="text-gray-400 max-w-xl mx-auto">
               Be among the first to experience StealthEra's revolutionary eldercare technology. 

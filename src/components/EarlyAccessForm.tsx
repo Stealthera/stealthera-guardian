@@ -5,11 +5,14 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 const EarlyAccessForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
+    role: '',
     message: ''
   });
   
@@ -20,6 +23,10 @@ const EarlyAccessForm = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+  };
+  
+  const handleRoleChange = (value: string) => {
+    setFormData(prev => ({ ...prev, role: value }));
   };
   
   const handleSubmit = (e: React.FormEvent) => {
@@ -42,7 +49,7 @@ const EarlyAccessForm = () => {
   if (isSubmitted) {
     return (
       <div className="bg-stealth-indigo/20 border border-stealth-purple/30 rounded-lg p-8 text-center">
-        <h3 className="text-2xl font-semibold mb-4 text-white">Thank You!</h3>
+        <h3 className="text-2xl font-bold mb-4 text-white uppercase">Thank You!</h3>
         <p className="text-gray-300 mb-6">
           Your early access request has been received. We'll contact you soon with more information.
         </p>
@@ -84,6 +91,34 @@ const EarlyAccessForm = () => {
           onChange={handleChange}
           className="bg-stealth-indigo/10 border-stealth-indigo/30 text-white"
         />
+      </div>
+      
+      <div className="space-y-2">
+        <Label htmlFor="phone" className="text-white">Phone</Label>
+        <Input
+          id="phone"
+          name="phone"
+          type="tel"
+          placeholder="+91 1234567890"
+          required
+          value={formData.phone}
+          onChange={handleChange}
+          className="bg-stealth-indigo/10 border-stealth-indigo/30 text-white"
+        />
+      </div>
+      
+      <div className="space-y-2">
+        <Label htmlFor="role" className="text-white">Role</Label>
+        <Select onValueChange={handleRoleChange} value={formData.role}>
+          <SelectTrigger className="bg-stealth-indigo/10 border-stealth-indigo/30 text-white">
+            <SelectValue placeholder="Select your role" />
+          </SelectTrigger>
+          <SelectContent className="bg-stealth-indigo border-stealth-purple/30">
+            <SelectItem value="caregiver">Caregiver</SelectItem>
+            <SelectItem value="hospital">Hospital</SelectItem>
+            <SelectItem value="senior">Senior</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
       
       <div className="space-y-2">
