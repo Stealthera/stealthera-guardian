@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -71,6 +70,9 @@ export default {
 					purple: "#9b87f5",
 					lavender: "#E6E6FA"
 				},
+				fontFamily: {
+					inter: ['Inter', 'sans-serif'],
+				},
 				keyframes: {
 					"accordion-down": {
 						from: {
@@ -117,9 +119,6 @@ export default {
 					"fade-in": "fade-in 0.5s ease-out",
 					"slide-in": "slide-in 0.5s ease-out",
 					"marquee": "marquee 30s linear infinite"
-				},
-				fontFamily: {
-					inter: ['Inter', 'sans-serif']
 				},
 				borderRadius: {
 					lg: 'var(--radius)',
