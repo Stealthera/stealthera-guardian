@@ -4,19 +4,19 @@ import { Home, Clock, Brain } from 'lucide-react';
 
 const problemData = [
   {
-    title: "Nuclear Families",
-    description: "60% of Indian seniors lack immediate caregiving support.",
-    icon: <Home className="w-12 h-12 text-stealth-blue animate-pulse" />
+    title: "Fall Risks & Delayed Care",
+    description: "40% of seniors experience falls annually, with 30% resulting in delayed medical care and preventable fatalities.",
+    icon: <Clock className="w-12 h-12 text-stealth-blue animate-pulse" />
   },
   {
-    title: "Delayed Response",
-    description: "30% of preventable deaths occur due to late intervention.",
-    icon: <Clock className="w-12 h-12 text-stealth-blue animate-glow" />
+    title: "Wandering Incidents",
+    description: "1 in 3 dementia patients wander into dangerous situations, 80% of which could be prevented with proper monitoring.",
+    icon: <Brain className="w-12 h-12 text-stealth-blue animate-glow" />
   },
   {
-    title: "Dementia Risks",
-    description: "1 in 3 seniors with dementia wander into danger.",
-    icon: <Brain className="w-12 h-12 text-stealth-blue" />
+    title: "Chronic Health Challenges",
+    description: "8-10% of India's population will face serious chronic diseases by 2030, but AI detection can identify risks 10-15 years earlier.",
+    icon: <Home className="w-12 h-12 text-stealth-blue" />
   }
 ];
 
@@ -27,7 +27,7 @@ const Problem = () => {
       
       <div className="max-w-6xl mx-auto z-10 relative">
         <h2 className="text-center mb-12">
-          Why Eldercare Feels Like a <span className="gradient-text">Race Against Time</span>
+          Why Eldercare Keeps <span className="gradient-text">Families Anxious</span>
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">

@@ -4,42 +4,47 @@ import { AlertCircle, Brain, Map, Activity, Watch } from 'lucide-react';
 
 const featureData = [
   {
-    title: "Emergency Alerts",
-    description: "Detects falls, crashes, and health anomalies in real-time.",
+    title: "Real-Time Emergency Alerts",
+    description: "Detects falls, crashes, and health anomalies with alerts sent in just 10 seconds.",
     icon: <AlertCircle className="w-12 h-12 text-stealth-blue animate-pulse" />,
-    column: 1
+    column: 1,
+    row: 1
   },
   {
-    title: "Cognitive Health Tracking",
-    description: "Monitors speech patterns and activity for early dementia signs.",
+    title: "Cognitive Health Monitoring",
+    description: "Tracks speech patterns and activity to identify early signs of cognitive decline.",
     icon: <Brain className="w-12 h-12 text-stealth-blue" />,
-    column: 1
+    column: 2,
+    row: 1
   },
   {
-    title: "Geofencing",
-    description: "Instant alerts when seniors leave safe zones.",
+    title: "Geofencing & Safety Zones",
+    description: "Instant alerts when seniors wander beyond predefined safe areas.",
     icon: <Map className="w-12 h-12 text-stealth-blue" />,
-    column: 2
+    column: 2,
+    row: 2
   },
   {
-    title: "Predictive Analytics",
-    description: "Flags cardiac/respiratory risks 10-15 years early.",
+    title: "Predictive Health Analytics",
+    description: "Flags potential cardiac and respiratory risks 10-15 years earlier than traditional methods.",
     icon: <Activity className="w-12 h-12 text-stealth-blue" />,
-    column: 2
+    column: 1,
+    row: 3
   },
   {
-    title: "24/7 Comfort",
-    description: "Thinner than a smartwatch, designed for non-stop wear.",
+    title: "24/7 Wearable Comfort",
+    description: "Thinner than a smartwatch, designed for continuous wear with medical-grade materials.",
     icon: <Watch className="w-12 h-12 text-stealth-blue" />,
-    column: 3
+    column: 2,
+    row: 3
   }
 ];
 
 const Features = () => {
-  // Filter features by column for the staggered layout
-  const column1 = featureData.filter(f => f.column === 1);
-  const column2 = featureData.filter(f => f.column === 2);
-  const column3 = featureData.filter(f => f.column === 3);
+  // Group features by row for the asymmetrical layout
+  const row1 = featureData.filter(f => f.row === 1);
+  const row2 = featureData.filter(f => f.row === 2);
+  const row3 = featureData.filter(f => f.row === 3);
   
   return (
     <section id="features" className="py-20 px-4 relative">
@@ -47,29 +52,29 @@ const Features = () => {
       
       <div className="max-w-6xl mx-auto z-10 relative">
         <h2 className="text-center mb-12">
-          <span className="gradient-text">StealthEra:</span> The AI Guardian Your Family Needs
+          <span className="gradient-text">StealthEra:</span> Your 24/7 AI Guardian
         </h2>
         
         {/* Desktop version - asymmetric grid */}
-        <div className="hidden md:grid grid-cols-3 gap-6 mt-16">
-          {/* Column 1 */}
-          <div className="space-y-6">
-            {column1.map((feature, index) => (
-              <FeatureCard key={`col1-${index}`} feature={feature} />
+        <div className="hidden md:block mt-16">
+          {/* Row 1 - two columns */}
+          <div className="grid grid-cols-2 gap-6 mb-6">
+            {row1.map((feature, index) => (
+              <FeatureCard key={`row1-${index}`} feature={feature} />
             ))}
           </div>
           
-          {/* Column 2 */}
-          <div className="space-y-6 mt-10">
-            {column2.map((feature, index) => (
-              <FeatureCard key={`col2-${index}`} feature={feature} />
+          {/* Row 2 - center column */}
+          <div className="grid grid-cols-1 max-w-md mx-auto mb-6">
+            {row2.map((feature, index) => (
+              <FeatureCard key={`row2-${index}`} feature={feature} />
             ))}
           </div>
           
-          {/* Column 3 */}
-          <div className="space-y-6">
-            {column3.map((feature, index) => (
-              <FeatureCard key={`col3-${index}`} feature={feature} />
+          {/* Row 3 - two columns */}
+          <div className="grid grid-cols-2 gap-6">
+            {row3.map((feature, index) => (
+              <FeatureCard key={`row3-${index}`} feature={feature} />
             ))}
           </div>
         </div>

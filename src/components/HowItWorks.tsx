@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Wand2, Line, BellRing } from 'lucide-react';
+import { Wand2, LineChart, BellRing } from 'lucide-react';
 
 const stepsData = [
   {
@@ -11,13 +11,13 @@ const stepsData = [
   },
   {
     number: "02",
-    title: "Analyze",
-    description: "AI processes vitals, movement, and speech patterns continuously.",
-    icon: <Line className="w-6 h-6 text-stealth-blue" />
+    title: "Monitor",
+    description: "AI analyzes vitals, movement, and speech patterns in real-time.",
+    icon: <LineChart className="w-6 h-6 text-stealth-blue" />
   },
   {
     number: "03",
-    title: "Alert",
+    title: "Protect",
     description: "Instant SOS to caregivers and hospitals during emergencies.",
     icon: <BellRing className="w-6 h-6 text-stealth-blue" />
   }
