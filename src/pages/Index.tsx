@@ -8,6 +8,7 @@ import Testimonials from '@/components/Testimonials';
 import Partners from '@/components/Partners';
 import { Menu, X } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+
 const Index = () => {
   useEffect(() => {
     // Simple intersection observer for fade-in animations
@@ -32,7 +33,9 @@ const Index = () => {
       });
     };
   }, []);
-  return <div className="min-h-screen bg-stealth-black overflow-x-hidden">
+
+  return (
+    <div className="min-h-screen bg-stealth-black overflow-x-hidden">
       <Helmet>
         <title>StealthEra | AI Eldercare Wearable</title>
         <meta name="description" content="AI-powered wearable for senior safety, monitoring, and peace of mind." />
@@ -107,27 +110,8 @@ const Index = () => {
           <Partners />
         </div>
       </main>
-      
-      <footer className="py-10 px-4 border-t border-stealth-indigo/30 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(86,204,242,0.1),transparent_70%)]"></div>
-        
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center z-10 relative">
-          <div className="text-[#CCCCCC] text-opacity-70 mb-4 md:mb-0">© 2025 StealthEra. All rights reserved.</div>
-          
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-            <a href="#" className="text-[#CCCCCC] text-opacity-70 hover:text-stealth-blue transition-colors">Home</a>
-            <a href="#features" className="text-[#CCCCCC] text-opacity-70 hover:text-stealth-blue transition-colors">Features</a>
-            <a href="#" className="text-[#CCCCCC] text-opacity-70 hover:text-stealth-blue transition-colors">FAQ</a>
-            <a href="#" className="text-[#CCCCCC] text-opacity-70 hover:text-stealth-blue transition-colors">Contact</a>
-            <a href="/early-access" className="text-[#CCCCCC] text-opacity-70 hover:text-stealth-blue transition-colors">Early Access</a>
-          </div>
-          
-          <div className="flex space-x-4 mt-4 md:mt-0">
-            <a href="#" className="text-[#CCCCCC] text-opacity-50 hover:text-stealth-blue transition-colors">Privacy Policy</a>
-            <a href="#" className="text-[#CCCCCC] text-opacity-50 hover:text-stealth-blue transition-colors">Terms of Service</a>
-          </div>
-        </div>
-      </footer>
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
