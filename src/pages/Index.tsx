@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Hero from '@/components/Hero';
@@ -9,33 +8,31 @@ import Testimonials from '@/components/Testimonials';
 import Partners from '@/components/Partners';
 import { Menu, X } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-
 const Index = () => {
   useEffect(() => {
     // Simple intersection observer for fade-in animations
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
         }
       });
-    }, { threshold: 0.1 });
-    
+    }, {
+      threshold: 0.1
+    });
+
     // Observe all elements with the fade-in-section class
     const fadeElements = document.querySelectorAll('.fade-in-section');
     fadeElements.forEach(element => {
       observer.observe(element);
     });
-    
     return () => {
       fadeElements.forEach(element => {
         observer.unobserve(element);
       });
     };
   }, []);
-  
-  return (
-    <div className="min-h-screen bg-stealth-black overflow-x-hidden">
+  return <div className="min-h-screen bg-stealth-black overflow-x-hidden">
       <Helmet>
         <title>StealthEra | AI Eldercare Wearable</title>
         <meta name="description" content="AI-powered wearable for senior safety, monitoring, and peace of mind." />
@@ -81,10 +78,7 @@ const Index = () => {
             </SheetContent>
           </Sheet>
           
-          <a 
-            href="/early-access" 
-            className="hidden md:block px-4 py-2 text-sm bg-stealth-blue hover:bg-stealth-purple text-white rounded-md transition-all hover:scale-105"
-          >
+          <a href="/early-access" className="hidden md:block px-4 py-2 text-sm bg-stealth-blue hover:bg-stealth-purple text-white rounded-md transition-all hover:scale-105">
             Early Access
           </a>
         </div>
@@ -118,9 +112,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(86,204,242,0.1),transparent_70%)]"></div>
         
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center z-10 relative">
-          <div className="text-[#CCCCCC] text-opacity-70 mb-4 md:mb-0">
-            © 2023 StealthEra. All rights reserved.
-          </div>
+          <div className="text-[#CCCCCC] text-opacity-70 mb-4 md:mb-0">© 2025 StealthEra. All rights reserved.</div>
           
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             <a href="#" className="text-[#CCCCCC] text-opacity-70 hover:text-stealth-blue transition-colors">Home</a>
@@ -136,8 +128,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
