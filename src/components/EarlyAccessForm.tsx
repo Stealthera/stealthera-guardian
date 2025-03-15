@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 
 const EarlyAccessForm = () => {
   const [formData, setFormData] = useState({
@@ -48,14 +48,14 @@ const EarlyAccessForm = () => {
   
   if (isSubmitted) {
     return (
-      <div className="bg-stealth-indigo/20 border border-stealth-purple/30 rounded-lg p-8 text-center">
-        <h3 className="text-2xl font-bold mb-4 text-white uppercase">Thank You!</h3>
-        <p className="text-gray-300 mb-6">
+      <div className="bg-stealth-indigo/20 border border-stealth-blue/30 rounded-lg p-8 text-center">
+        <h3 className="text-2xl font-semibold mb-4 uppercase">Thank You!</h3>
+        <p className="text-[#CCCCCC] mb-6">
           Your early access request has been received. We'll contact you soon with more information.
         </p>
         <Button
           variant="outline"
-          className="border-stealth-purple text-stealth-purple hover:bg-stealth-purple/10"
+          className="border-stealth-blue text-stealth-blue hover:bg-stealth-blue/10"
           onClick={() => window.location.href = '/'}
         >
           Return Home
@@ -67,7 +67,7 @@ const EarlyAccessForm = () => {
   return (
     <form onSubmit={handleSubmit} className="space-y-6 bg-stealth-black border border-stealth-indigo/30 rounded-lg p-8">
       <div className="space-y-2">
-        <Label htmlFor="name" className="text-white">Name</Label>
+        <Label htmlFor="name" className="text-[#F0F0F0]">Name</Label>
         <Input
           id="name"
           name="name"
@@ -75,12 +75,12 @@ const EarlyAccessForm = () => {
           required
           value={formData.name}
           onChange={handleChange}
-          className="bg-stealth-indigo/10 border-stealth-indigo/30 text-white"
+          className="bg-stealth-indigo/10 border-stealth-indigo/30 text-white focus:ring-2 focus:ring-stealth-blue focus:border-stealth-blue"
         />
       </div>
       
       <div className="space-y-2">
-        <Label htmlFor="email" className="text-white">Email Address</Label>
+        <Label htmlFor="email" className="text-[#F0F0F0]">Email Address</Label>
         <Input
           id="email"
           name="email"
@@ -89,12 +89,12 @@ const EarlyAccessForm = () => {
           required
           value={formData.email}
           onChange={handleChange}
-          className="bg-stealth-indigo/10 border-stealth-indigo/30 text-white"
+          className="bg-stealth-indigo/10 border-stealth-indigo/30 text-white focus:ring-2 focus:ring-stealth-blue focus:border-stealth-blue"
         />
       </div>
       
       <div className="space-y-2">
-        <Label htmlFor="phone" className="text-white">Phone</Label>
+        <Label htmlFor="phone" className="text-[#F0F0F0]">Phone</Label>
         <Input
           id="phone"
           name="phone"
@@ -103,39 +103,45 @@ const EarlyAccessForm = () => {
           required
           value={formData.phone}
           onChange={handleChange}
-          className="bg-stealth-indigo/10 border-stealth-indigo/30 text-white"
+          className="bg-stealth-indigo/10 border-stealth-indigo/30 text-white focus:ring-2 focus:ring-stealth-blue focus:border-stealth-blue"
         />
       </div>
       
       <div className="space-y-2">
-        <Label htmlFor="role" className="text-white">Role</Label>
-        <Select onValueChange={handleRoleChange} value={formData.role}>
-          <SelectTrigger className="bg-stealth-indigo/10 border-stealth-indigo/30 text-white">
-            <SelectValue placeholder="Select your role" />
-          </SelectTrigger>
-          <SelectContent className="bg-stealth-indigo border-stealth-purple/30">
-            <SelectItem value="caregiver">Caregiver</SelectItem>
-            <SelectItem value="hospital">Hospital</SelectItem>
-            <SelectItem value="senior">Senior</SelectItem>
-          </SelectContent>
-        </Select>
+        <Label htmlFor="role" className="text-[#F0F0F0]">Role</Label>
+        <ToggleGroup 
+          type="single" 
+          value={formData.role}
+          onValueChange={handleRoleChange}
+          className="flex justify-between"
+        >
+          <ToggleGroupItem value="caregiver" className="w-1/3 bg-stealth-indigo/10 data-[state=on]:bg-stealth-blue data-[state=on]:text-white">
+            Caregiver
+          </ToggleGroupItem>
+          <ToggleGroupItem value="hospital" className="w-1/3 bg-stealth-indigo/10 data-[state=on]:bg-stealth-blue data-[state=on]:text-white">
+            Hospital
+          </ToggleGroupItem>
+          <ToggleGroupItem value="senior" className="w-1/3 bg-stealth-indigo/10 data-[state=on]:bg-stealth-blue data-[state=on]:text-white">
+            Senior
+          </ToggleGroupItem>
+        </ToggleGroup>
       </div>
       
       <div className="space-y-2">
-        <Label htmlFor="message" className="text-white">Message (Optional)</Label>
+        <Label htmlFor="message" className="text-[#F0F0F0]">Message (Optional)</Label>
         <Textarea
           id="message"
           name="message"
           placeholder="Tell us about your interest in StealthEra..."
           value={formData.message}
           onChange={handleChange}
-          className="bg-stealth-indigo/10 border-stealth-indigo/30 text-white min-h-[100px]"
+          className="bg-stealth-indigo/10 border-stealth-indigo/30 text-white min-h-[100px] focus:ring-2 focus:ring-stealth-blue focus:border-stealth-blue"
         />
       </div>
       
       <Button 
         type="submit" 
-        className="w-full btn-primary"
+        className="w-full bg-stealth-blue hover:bg-stealth-purple hover:scale-105 text-white transition-all"
         disabled={isSubmitting}
       >
         {isSubmitting ? "Submitting..." : "Request Early Access"}

@@ -127,10 +127,20 @@ export default {
 				},
 				"glow": {
 					"0%, 100%": {
-						boxShadow: "0 0 5px rgba(122, 109, 237, 0.5)"
+						boxShadow: "0 0 5px rgba(86, 204, 242, 0.5)"
 					},
 					"50%": {
-						boxShadow: "0 0 20px rgba(122, 109, 237, 0.8)"
+						boxShadow: "0 0 20px rgba(86, 204, 242, 0.8)"
+					}
+				},
+				"slide-up": {
+					"0%": {
+						opacity: "0",
+						transform: "translateY(20px)"
+					},
+					"100%": {
+						opacity: "1",
+						transform: "translateY(0)"
 					}
 				}
 			},
@@ -141,13 +151,20 @@ export default {
 				"slide-in": "slide-in 0.5s ease-out",
 				"marquee": "marquee 30s linear infinite",
 				"pulse": "pulse 2s ease-in-out infinite",
-				"glow": "glow 2s ease-in-out infinite"
+				"glow": "glow 2s ease-in-out infinite",
+				"slide-up": "slide-up 0.5s ease-out"
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			backgroundImage: {
+				'gradient-blue-purple': 'linear-gradient(45deg, #7A6DED, #56CCF2)',
+			},
+			boxShadow: {
+				'card-hover': '0 4px 15px -3px rgba(122, 109, 237, 0.2)',
+			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
