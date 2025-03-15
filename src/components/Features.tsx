@@ -9,13 +9,13 @@ const featureData = [{
 }, {
   title: "Cognitive Health Monitoring",
   description: "Tracks speech patterns and activity to identify early signs of cognitive decline.",
-  icon: <Brain className="w-12 h-12 text-[#7E57C2]\n" />,
+  icon: <Brain className="w-12 h-12 text-[#7E57C2]" />,
   column: 2,
   row: 1
 }, {
   title: "Geofencing & Safety Zones",
   description: "Instant alerts when seniors wander beyond predefined safe areas.",
-  icon: <Map className="w-12 h-12 text-[#26A69A]\n" />,
+  icon: <Map className="w-12 h-12 text-[#26A69A]" />,
   column: 2,
   row: 2
 }, {
@@ -27,7 +27,7 @@ const featureData = [{
 }, {
   title: "24/7 Wearable Comfort",
   description: "Thinner than a smartwatch, designed for continuous wear with medical-grade materials.",
-  icon: <Watch className="w-12 h-12 text-[#FFA726]\n" />,
+  icon: <Watch className="w-12 h-12 text-[#FFA726]" />,
   column: 2,
   row: 3
 }];
