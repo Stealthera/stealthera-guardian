@@ -3,18 +3,28 @@ import React from 'react';
 import { Send, Phone, Mail, MapPin } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 
-// Placeholder partner logos (in a real app, these would be actual partner logos)
-const partnerLogos = Array(8).fill(0).map((_, index) => (
-  <div 
-    key={index} 
-    className="h-16 w-40 bg-white bg-opacity-5 rounded-md flex items-center justify-center px-4 mx-6 
-              transition-all duration-300 hover:bg-opacity-10 group hover:scale-105"
-  >
-    <div className="text-white text-opacity-50 group-hover:text-stealth-blue group-hover:text-opacity-100 font-medium transition-all">
-      Partner {index + 1}
-    </div>
+// Organization logos with their paths
+const partnerLogos = [
+  { src: "/lovable-uploads/b55cde14-d477-49b7-b85a-d20f9250d9e9.png", alt: "T-WORKS" },
+  { src: "/lovable-uploads/d328d001-0865-4c2c-b4b3-b1cc521351ac.png", alt: "IIT Bombay" },
+  { src: "/lovable-uploads/afe485d1-06ac-4b89-b808-ebff7ec29f21.png", alt: "NASSCOM Center of Excellence" },
+  { src: "/lovable-uploads/a61a5029-0eb5-4016-a1d6-a2d5195d79bb.png", alt: "TIH Foundation" },
+  { src: "/lovable-uploads/4199e30c-96e4-4e23-8b1a-a25bd5137879.png", alt: "SIPI" },
+  { src: "/lovable-uploads/a248397f-c07e-4af5-9299-f642d2c57676.png", alt: "YOUTH C:LAB" },
+  { src: "/lovable-uploads/85c76bde-8b05-42b3-8320-ada3d0954115.png", alt: "WADHWANI FOUNDATION" },
+  { src: "/lovable-uploads/a9cb2a24-f6eb-4d5a-b9f8-00dc2e1492af.png", alt: "NM-ICPS" }
+];
+
+const LogoItem = ({ src, alt }: { src: string; alt: string }) => (
+  <div className="h-16 w-40 mx-6 flex items-center justify-center transition-all duration-300 hover:scale-105 filter grayscale hover:grayscale-0">
+    <img 
+      src={src} 
+      alt={alt} 
+      className="max-h-full max-w-full object-contain" 
+      loading="lazy"
+    />
   </div>
-));
+);
 
 const Partners = () => {
   return (
@@ -24,21 +34,30 @@ const Partners = () => {
           Trusted by <span className="gradient-text">Innovators</span>
         </h2>
         
-        {/* Desktop marquee */}
+        {/* Desktop infinite marquee */}
         <div className="relative w-full overflow-hidden hidden md:block">
           <div className="flex whitespace-nowrap">
-            <div className="flex animate-marquee">
-              {partnerLogos}
-              {partnerLogos} {/* Duplicate for continuous scroll */}
+            <div className="flex animate-marquee will-change-transform">
+              {partnerLogos.map((logo, index) => (
+                <LogoItem key={`original-${index}`} src={logo.src} alt={logo.alt} />
+              ))}
+              {partnerLogos.map((logo, index) => (
+                <LogoItem key={`duplicate-${index}`} src={logo.src} alt={logo.alt} aria-hidden="true" />
+              ))}
             </div>
           </div>
         </div>
         
         {/* Mobile grid */}
-        <div className="md:hidden grid grid-cols-2 gap-4 max-w-sm mx-auto">
+        <div className="md:hidden grid grid-cols-2 gap-6 max-w-sm mx-auto">
           {partnerLogos.slice(0, 4).map((logo, i) => (
-            <div key={`mobile-${i}`} className="flex justify-center">
-              {logo}
+            <div key={`mobile-${i}`} className="flex justify-center filter grayscale hover:grayscale-0 transition-all duration-300">
+              <img 
+                src={logo.src} 
+                alt={logo.alt} 
+                className="max-h-16 max-w-full object-contain" 
+                loading="lazy"
+              />
             </div>
           ))}
         </div>

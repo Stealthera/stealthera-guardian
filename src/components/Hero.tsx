@@ -40,14 +40,14 @@ const Hero = () => {
         </div>
         
         <div className="relative w-full max-w-md mx-auto">
-          <div className="bg-gradient-to-r from-stealth-purple/10 to-stealth-blue/10 rounded-full aspect-square max-w-md mx-auto flex items-center justify-center p-8">
+          <div className="bg-gradient-to-r from-stealth-purple/10 to-stealth-blue/10 rounded-full aspect-square max-w-md mx-auto flex items-center justify-center p-8 animate-pulse">
             <div className="rounded-full bg-gradient-to-r from-stealth-purple/20 to-stealth-blue/20 w-4/5 h-4/5 flex items-center justify-center">
               <div className="relative rounded-full bg-black w-3/5 h-3/5 flex items-center justify-center overflow-hidden border border-stealth-blue/30">
                 <img 
                   src="/lovable-uploads/dfd0cfb5-be96-4b4f-a584-48c48b25c6e2.png" 
-                  alt="StealthEra device collection showing wristbands in various colors" 
+                  alt="StealthEra wearable devices with comfortable bands in multiple colors"
                   className="absolute inset-0 w-full h-full object-cover"
-                  aria-label="StealthEra wearable devices with comfortable bands in multiple colors"
+                  loading="lazy"
                 />
               </div>
             </div>
